@@ -1,22 +1,11 @@
-// Напишіть функцію min(a, b), яка приймає 2 числа і повертає меньше з них.
-// Потрібно додати перевірку, що функція отримує саме числа, в іншому випадку
-// повертати з функції рядок - 'Not a number!'.
+//  Відсортуйте масив об'єктів за віком у порядку зростання.
+// Очікуваний результат: [{name: "Bob", age: 19}, {name: "John", age: 27}, {name: "Jane", age: 31}].
 
-//
-// example 1
-//
-// function min(a, b) {
-//     if (typeof a !== "number" || typeof b !== "number") {
-//         return 'Not a number!';
-//     }
-//     return a > b ? b : a;
-// }
+const users = [
+  { name: "John", age: 27 },
+  { name: "Jane", age: 31 },
+  { name: "Bob", age: 19 },
+];
 
-//
-// example 2
-//
-function min(a, b) {
-    return typeof a !== "number" && typeof b !== "number" ? "Not a number!" : Math.min(a, b);
-}
-console.log(min(4, 3));
-
+const usersSorted = users.sort((a, b) => a.age - b.age);
+console.table(usersSorted);

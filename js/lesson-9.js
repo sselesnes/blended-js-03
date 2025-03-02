@@ -1,13 +1,14 @@
-// Напишіть функцію isAdult(age), яка  приймає число - вік користувача і повертає true,
-// якщо параметр age більше чи дорівнює 18.
-// В іншому випадку вона запитує підтвердження через confirm
-// і повертає його результат (true/false).
+// Дано масив об'єктів.
+// Створіть новий масив, що містить тільки об'єкти, в яких
+// вік більше 20 років.
+// Очікуваний результат: [{name: "John", age: 27}, {name: "Jane", age: 31}]
 
-//
-// example 1
-//
-function isAdult() {   
-    return prompt(`Enter your age`) >= 18 ? true : confirm(`Are you adult?`)
-}
+const user = [
+  { name: "John", age: 27 },
+  { name: "Jane", age: 31 },
+  { name: "Bob", age: 19 },
+];
 
-console.log(isAdult());
+const userAged20 = user.filter(record => record.age > 20);
+
+console.table(userAged20);

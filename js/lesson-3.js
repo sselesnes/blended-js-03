@@ -1,45 +1,15 @@
-// Змінна num може набувати 4 значення: '1', '2', '3' або '4'
-// (запитуй це значення у користувача через prompt).
-// Якщо вона має значення '1', то у змінну result запишіть 'зима',
-// якщо має значення '2' - 'весна' і так далі.
-// Розв'яжіть завдання через switch-case.
-// Не забудьте про дефолтне значення, на випадок, якщо користувач
-// введе в prompt щось інше. В такому випадку result має набувати значення:
-// "Вибачте, але ви маєте ввести значення від 1 до 4 включно".
-// Значення змінної result виведіть в консоль.
+// Дано масив об'єктів.
+// Перевірте, чи є хоча б один об'єкт з віком менше 20 років.
+// Очікуваний результат: true.
 
+const people = [
+  { name: "John", age: 27 },
+  { name: "Jane", age: 31 },
+  { name: "Bob", age: 19 },
+];
 
-//
-// example 1
-//
-// let num = Number(prompt("Введіть значення"));
-// let result;
+const isAge20 = people.some(entity => entity.age < 20);
+// const isAge20 = !people.every(entity => entity.age >= 20);
+// const isAge20 = people.find(entity => entity.age < 20) !== undefined;
 
-// switch (num) {
-//   case 1:
-//     result = "зима";
-//     break;
-//   case 2:
-//     result = "весна";
-//     break;
-//   case 3:
-//     result = "літо";
-//     break;
-//   case 4:
-//     result = "осінь";
-//     break;
-//   default:
-//     result = "Вибачте, але Ви маєте ввести значення від 1 до 4 включно";
-// }
-
-// alert(result);
-
-//
-// example 2
-//
-function season(num) {
-  const seasons = ["зима", "весна", "літо", "осінь", "Вибачте, але Ви маєте ввести значення від 1 до 4 включно"];  
-  return num && num >= 1 && num <=4 ? seasons[num-1] : seasons[4] 
-}
-
-alert(`Сезон ${season(prompt(`Введіть номер сезону`))}`);
+console.log(isAge20);

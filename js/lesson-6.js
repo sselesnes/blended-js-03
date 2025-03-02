@@ -1,5 +1,8 @@
-// Використайте цикл while, щоб вивести в console всі числа від 0 до 20 включно.
+// Відсортуйте масив чисел [4, 2, 5, 1, 3]
+// у порядку зростання. Очікуваний результат: [1, 2, 3, 4, 5].
 
-let x = 0;
-while (x <= 20) console.log(x++);
-    
+const numbersArray = [4, 2, 5, 1, 3];
+const sortedArray = numbersArray.toSorted((a, b) => a - b);
+
+console.log(sortedArray);
+console.log(numbersArray);
