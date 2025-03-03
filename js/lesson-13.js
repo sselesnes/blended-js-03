@@ -16,45 +16,53 @@
 //  ##### Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з ідентифікатором співробітника, зарплатою та відділом, в якому працює співробітник.
 //
 
-// class Person {
-//   constructor(name, age, gender, email) {
-//     this.name = name;
-//     this.age = age;
-//     this.gender = gender;
-//     this.email = email;
-//   }
-
-//   getDetails() {
-//     return `name: ${this.name}, age: ${this.age}, gender: ${this.gender}, email: ${this.email}`;
-//   }
-// }
-
-// class Employee extends Person {
-//   constructor(person, salary, department) {
-//     super(person.name, person.age, person.gender, person.email);
-//     this.salary = salary;
-//     this.department = department;
-//   }
-
-//   getEmployeeDetails() {
-//     return `name: ${this.name}, age: ${this.age}, gender: ${this.gender}, email: ${this.email}, salary: ${this.salary}, department: ${this.department}`;
-//   }
-// }
-
-// const person = new Person("John", 25, "male", "johnsome@ukr.net");
-// console.log(person.getDetails());
-
-// const employee = new Employee(
-//   new Person("Jane", 30, "female", "jane.doe@example.com"),
-//   1000,
-//   "GoIT"
-// );
-// console.log(employee.getEmployeeDetails());
-
-// const employee1 = new Employee(person, 1000, "GoIT");
-// console.log(employee1.getEmployeeDetails());
-
 class Person {
+  constructor(name, age, gender, email) {
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+    this.email = email;
+  }
+
+  getDetails() {
+    return { name: this.name, age: this.age, gender: this.gender, email: this.email };
+  }
+}
+
+class Employee extends Person {
+  constructor(person, salary, department) {
+    super(person.name, person.age, person.gender, person.email);
+    this.salary = salary;
+    this.department = department;
+  }
+
+  getEmployeeDetails() {
+    return {
+      name: this.name,
+      age: this.age,
+      gender: this.gender,
+      email: this.email,
+      salary: this.salary,
+      department: this.department,
+    };
+  }
+}
+
+const person = new Person("John", 25, "male", "johnsome@ukr.net");
+console.table(person.getDetails());
+
+const employee = new Employee(
+  new Person("Jane", 30, "female", "jane.doe@example.com"),
+  1000,
+  "GoIT"
+);
+console.table(employee.getEmployeeDetails());
+
+const employee1 = new Employee(person, 1000, "GoIT");
+console.table(employee1.getEmployeeDetails());
+
+//
+class Person0 {
   constructor(age, email, gender, name) {
     this.age = age;
     this.email = email;
@@ -65,7 +73,7 @@ class Person {
     return { name: this.name, age: this.age, gender: this.gender, email: this.email };
   }
 }
-class Employee extends Person {
+class Employee0 extends Person0 {
   constructor(age, email, gender, name, salary, department) {
     super(age, email, gender, name);
     this.salary = salary;
@@ -75,5 +83,5 @@ class Employee extends Person {
     return { ...this.getDetails(), salary: this.salary, department: this.department };
   }
 }
-const employee = new Employee(21, "foo@gmail.com", "male", "Frank", 1500, "SalesDep");
-console.table(employee.getEmployeeDetails());
+const employee0 = new Employee0(21, "foo@gmail.com", "male", "Frank", 1500, "SalesDep");
+console.table(employee0.getEmployeeDetails());
